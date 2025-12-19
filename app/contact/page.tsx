@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <main className={styles.page}>
-      {/* NAV */}
+      {/* NAVIGATION */}
       <nav className={styles.topNav}>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
@@ -13,7 +13,7 @@ export default function Contact() {
       </nav>
 
       <section className={styles.wrapper}>
-        {/* LEFT INFO */}
+        {/* LEFT SIDE: INFO */}
         <div className={styles.info}>
           <h2>Contact</h2>
 
@@ -33,20 +33,19 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT FORM */}
+        {/* RIGHT SIDE: CALL TO ACTION */}
         <div className={styles.formBox}>
-          <h3>Leave a message</h3>
-
-          <form
-            action="mailto:hady.farrastha@gmail.com"
-            method="post"
-            encType="text/plain"
+          <h3>Get in touch</h3>
+          <p className={styles.formDescription}>
+            I am currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!
+          </p>
+          
+          <a 
+            href="mailto:hady.farrastha@gmail.com" 
+            className={styles.emailButton}
           >
-            <input type="text" name="name" placeholder="Name" />
-            <input type="email" name="email" placeholder="E-mail" />
-            <textarea name="message" placeholder="Message" rows={4} />
-            <button type="submit">Send</button>
-          </form>
+            Send Me an Email
+          </a>
         </div>
       </section>
     </main>

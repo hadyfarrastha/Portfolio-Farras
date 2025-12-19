@@ -1,11 +1,12 @@
-.page{
+.page {
   min-height: 100vh;
-  background: #0b0f14;
+  background: #05070c; /* Warna gelap konsisten dengan About */
   color: #ffffff;
   padding: 80px 40px;
+  position: relative;
 }
 
-.topNav{
+.topNav {
   position: absolute;
   top: 30px;
   right: 40px;
@@ -14,92 +15,104 @@
   font-size: 14px;
   letter-spacing: .15em;
   text-transform: uppercase;
+  z-index: 10;
 }
 
-.topNav a{
-  color: rgba(255,255,255,.6);
+.topNav a {
+  color: rgba(255, 255, 255, .6);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .topNav a:hover,
-.active{
+.active {
   color: #ff5d5d;
 }
 
-.wrapper{
+.wrapper {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 100px auto 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.info h2{
-  font-size: 36px;
+.info h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.item {
   margin-bottom: 30px;
 }
 
-.item{
-  margin-bottom: 24px;
-}
-
-.label{
-  font-size: 12px;
+.label {
+  display: block;
+  font-size: 11px;
   letter-spacing: .2em;
-  color: rgba(255,255,255,.5);
+  color: #ff5d5d;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
-.item p{
-  margin-top: 6px;
-  line-height: 1.6;
-}
-
-.formBox{
-  background: #ffffff;
-  color: #111;
-  padding: 40px;
-  border-radius: 6px;
-}
-
-.formBox h3{
-  margin-bottom: 20px;
+.item p {
   font-size: 18px;
-  color: #3cb371;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
 }
 
-.formBox form{
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* REVISI BOX KANAN */
+.formBox {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
 }
 
-.formBox input,
-.formBox textarea{
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 4px;
-  font-size: 14px;
-  outline: none;
+.formBox h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
 }
 
-.formBox button{
-  margin-top: 10px;
-  background: #3cb371;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-weight: 600;
-  cursor: pointer;
+.formDescription {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-size: 15px;
 }
 
-.formBox button:hover{
-  background: #34a866;
+.emailButton {
+  display: inline-block;
+  padding: 16px 36px;
+  background: transparent;
+  color: #ff5d5d;
+  border: 2px solid #ff5d5d;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.emailButton:hover {
+  background: #ff5d5d;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 93, 93, 0.2);
 }
 
 /* RESPONSIVE */
-@media (max-width: 800px){
-  .wrapper{
+@media (max-width: 850px) {
+  .wrapper {
     grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .info h2 {
+    font-size: 32px;
   }
 }
