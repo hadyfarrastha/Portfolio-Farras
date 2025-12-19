@@ -1,0 +1,210 @@
+.stage{
+  position: relative;
+  min-height: 100vh;
+  background: #05070c;
+  color: rgba(255,255,255,.92);
+  overflow: hidden;
+}
+
+
+.bg{
+  object-fit: cover;
+  filter: contrast(1.05) saturate(.95);
+  transform: scale(1);  /* Bisa coba ubah angka ini juga */
+  background-size: 120% auto;  /* Zoom out background */
+}
+
+.bgOverlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 520px at 55% 45%, rgba(0,0,0,.18), rgba(0,0,0,.86)),
+    linear-gradient(to bottom, rgba(5,7,12,.35), rgba(5,7,12,.95));
+  z-index: 0;
+  pointer-events:none;
+}
+
+.frame{
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;
+  pointer-events:none;
+  z-index:2;
+}
+
+.logo{
+  position:absolute;
+  top:26px;
+  left:28px;
+  font-weight:950;
+  font-size:26px;
+  letter-spacing:.12em;
+  z-index:10;
+}
+
+.topNav{
+  position:absolute;
+  top:30px;
+  right:28px;
+  display:flex;
+  gap:20px;
+  font-size:14px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+  z-index:10;
+}
+
+.topNav a{
+  text-decoration:none;
+  opacity:.85;
+}
+.topNav a:hover{
+  opacity:1;
+  color:#ff5d5d;
+}
+
+.small{
+  font-size: 18px;
+  letter-spacing: .32em;
+  color: rgba(255,255,255,.62);
+  margin-bottom: 14px;
+}
+
+.name{
+  font-family: var(--font-display);
+  margin:0;
+  font-weight:950;
+  letter-spacing:0em;
+  line-height:.9;
+  font-size:clamp(50px, 10vw, 80px);
+}
+
+.nameGap{
+  padding-left: .18em;   /* atur jarak antar kata */
+}
+
+
+.role{
+  margin-top: 16px;
+  font-size: 16px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: #ff5d5d;
+}
+
+/* SHIFTED CENTER (like reference, not dead-center) */
+.centerShift{
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+
+  /* tweak these two to match your taste */
+  padding-left: clamp(40px, 12vw, 190px);
+  padding-right: 22px;
+
+  /* move slightly up */
+  padding-top: 40px;
+}
+
+/* Social icons bottom-left */
+.social{
+  position:absolute;
+  left:28px;
+  bottom:92px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  z-index:3;
+}
+
+.social a svg{
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.75);
+  text-decoration:none;
+}
+
+.social a:hover{
+  border-color:#ff5d5d;
+  color:#ff5d5d;
+  background:rgba(255,93,93,.1);
+}
+
+/* Next arrow bottom-right */
+.nextRight{
+  position:absolute;
+  right:30px;
+  bottom:30px;
+
+  width:66px;
+  height:66px;
+  border-radius:999px;
+
+  background:#ffffff;                 /* solid white */
+  border: 2px solid rgba(255,255,255,.95); /* ring tipis biar kerasa "()" */
+  color:#0b0f14;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  text-decoration:none;
+
+  z-index:3;
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(0,0,0,.06);  /* detail halus */
+}
+
+.nextRight:hover{
+  transform: translateY(-2px);
+  transition: 150ms ease;
+  filter: brightness(0.98);
+}
+
+
+/* Mobile: center again so it doesn't look broken */
+@media (max-width: 700px){
+  .centerShift{
+    text-align:center;
+    align-items:center;
+    padding-left: 22px;
+  }
+}
+
+.active{
+  color:#ff5d5d;
+  opacity:1 !important;
+}
+
+.nextHint{
+  position: absolute;
+  right: 110px;     /* posisi di kiri tombol */
+  bottom: 48px;
+  z-index: 10;
+
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+}
+
+.nextRight:hover + .nextHint{
+  color: rgba(255,255,255,.85);
+}
