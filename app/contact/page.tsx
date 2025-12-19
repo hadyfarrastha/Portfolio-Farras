@@ -41,7 +41,9 @@ export default function Contact() {
           </p>
           
           <a 
-            href="mailto:hady.farrastha@gmail.com" 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=hady.farrastha@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className={styles.emailButton}
           >
             Send Me an Email
